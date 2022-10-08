@@ -1,5 +1,5 @@
 FROM ubi8/go-toolset as build
-COPY ./src .
+COPY . .
 
 RUN go mod init mikroserwis3 && \
     go mod tidy && \
