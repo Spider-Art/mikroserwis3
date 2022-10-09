@@ -27,7 +27,7 @@ func returnPoAwarii(w http.ResponseWriter, r *http.Request){
 }
 
 func returnResponse(w http.ResponseWriter, r *http.Request){
-	fmt.Println("Endpoint Hit: Odpowiedź z mikroserwisu-3 wersja-1")
+	fmt.Println("Endpoint Hit: Odpowiedź z mikroserwisu-3 wersja-2")
 	hostname, err := os.Hostname()
 	if err != nil {
 		fmt.Println(err)
@@ -35,7 +35,7 @@ func returnResponse(w http.ResponseWriter, r *http.Request){
 	}
 	if awaria == false {	
 		count=count+1
-		fmt.Fprintf(w, "Odpowiadam z pod-a %s wersja-1, po raz %d! \n",hostname,count)
+		fmt.Fprintf(w, "Odpowiadam z pod-a %s wersja-2, po raz %d! \n",hostname,count)
 	}else{
 		w.WriteHeader(http.StatusServiceUnavailable)
 		fmt.Fprintf(w, "Symulacja awarii serwisu %s \n",hostname)
