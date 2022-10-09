@@ -38,7 +38,7 @@ func returnResponse(w http.ResponseWriter, r *http.Request){
 		fmt.Fprintf(w, "Odpowiadam z pod-a %s wersja-1, po raz %d! \n",hostname,count)
 	}else{
 		w.WriteHeader(http.StatusServiceUnavailable)
-		fmt.Fprintf(w, "Symulacja awarii serwisu %s",hostname)
+		fmt.Fprintf(w, "Symulacja awarii serwisu %s \n",hostname)
 	}
 }
 
