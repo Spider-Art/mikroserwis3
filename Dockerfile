@@ -4,7 +4,7 @@ COPY . .
 RUN go mod init mikroserwis3.go && \
     go mod tidy
 RUN pwd    
-RUN go build .
+RUN go build mikroserwis3.go
 RUN ls
 
 FROM ubi8/ubi-micro
