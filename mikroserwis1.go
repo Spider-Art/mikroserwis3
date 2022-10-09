@@ -27,7 +27,7 @@ func returnResponse(w http.ResponseWriter, r *http.Request){
 	}
 
 	client := &http.Client{}
- 	req, err := http.NewRequest("GET", "http://localhost:8080/mikroserwis2/", nil)
+ 	req, err := http.NewRequest("GET", "http://mikroserwis2:8080/mikroserwis2/", nil)
 	if err != nil {
 		fmt.Print(err.Error())
 		fmt.Println("Brak serwisu 2")
