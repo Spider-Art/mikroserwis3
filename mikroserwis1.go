@@ -19,7 +19,7 @@ func homePage(w http.ResponseWriter, r *http.Request){
 
 
 func returnResponse(w http.ResponseWriter, r *http.Request){
-	fmt.Println("Endpoint Hit: Odpowiedź z mikroserwisu-2")
+	fmt.Println("Endpoint Hit: Odpowiedź z mikroserwisu-1")
 	hostname, err := os.Hostname()
 	if err != nil {
 		fmt.Println(err)
@@ -27,16 +27,16 @@ func returnResponse(w http.ResponseWriter, r *http.Request){
 	}
 
 	client := &http.Client{}
- 	req, err := http.NewRequest("GET", "http://mikroserwis3:8080/mikroserwis3/", nil)
+ 	req, err := http.NewRequest("GET", "http://mikroserwis2:8080/mikroserwis2/", nil)
 	if err != nil {
 		fmt.Print(err.Error())
-		fmt.Println("Brak serwisu 3")
+		fmt.Println("Brak serwisu 2")
  	}
 
 	resp, err := client.Do(req)
 	if err != nil {
-		fmt.Println("Brak serwisu 3")
-		fmt.Fprintf(w,"Brak mikroserwisu 3 !!!")
+		fmt.Println("Brak serwisu 2")
+		fmt.Fprintf(w,"Brak mikroserwisu 2 !!!")
 		return
  	}
 	defer resp.Body.Close()
@@ -52,7 +52,7 @@ func returnResponse(w http.ResponseWriter, r *http.Request){
 func handleRequests() {
     myRouter := mux.NewRouter().StrictSlash(true)
     myRouter.HandleFunc("/", homePage)
-	myRouter.HandleFunc("/mikroserwis2", returnResponse)
+	myRouter.HandleFunc("/mikroserwis1", returnResponse)
     log.Fatal(http.ListenAndServe(":8080", myRouter))
 }
 
