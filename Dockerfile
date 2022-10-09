@@ -6,5 +6,5 @@ RUN go mod init mikroserwis3.go && \
     go build .
 
 FROM ubi8/ubi-micro
-COPY --from=build /opt/app-root/src/mikroserwis3.go .
+COPY --from=build /opt/app-root/src/mikroserwis3 .
 CMD ./mikroserwis3
